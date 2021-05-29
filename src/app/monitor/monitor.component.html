@@ -1,0 +1,22 @@
+<div class="monitor p-3">
+    <div class="border border-secondary border-3 h-100 w-100 rounded-3 text-center">
+        <div>
+            Monitor
+        </div>
+        
+        <div *ngIf="isStarted" class="bg-success p-3 rounded-3 w-25 mx-auto">
+            Is Started
+        </div>
+        <div *ngIf="!isStarted" class="bg-danger p-3 rounded-3 w-25 mx-auto">
+            Has Ended
+        </div>
+
+        <div class="mt-4">
+            <app-mouse [offName]="button2Name" [onnName]="button1Name" (changeStatus)="changeIsStartedValue($event)"></app-mouse>
+        </div>
+
+        <div *ngFor="let user of usersList">
+            {{user.name}}
+        </div>
+    </div>
+</div>
